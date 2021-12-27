@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"syscall"
 	"time"
 
 	"golang.org/x/term"
@@ -61,7 +60,7 @@ func NewCmd() cli.App {
 func readPwdStdin(msg string) (string, error) {
 	// send to stderr so the prompt message still appeared for redirecting the result output
 	fmt.Fprint(os.Stderr, msg)
-	bytePassword, err := term.ReadPassword(syscall.Stdin)
+	bytePassword, err := term.ReadPassword(int(os.Stdin.Fd()))
 	fmt.Println("")
 	if err != nil {
 		return "", err

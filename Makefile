@@ -2,7 +2,7 @@ NAME ?= "content-plus-totp"
 
 .PHONY: test
 test:
-	go test -race -v $$(go list ./...)
+	go test -v -cover -coverprofile=coverage.txt -covermode=atomic ./...
 
 .PHONY: lint
 lint:
