@@ -1,0 +1,35 @@
+run:
+  timeout: 3m
+
+skip-dirs:
+  - report # megalinter results+fixes
+
+linters-settings:
+  gocyclo:
+    min-complexity: 15
+  gocritic:
+    disabled-checks:
+      - ifElseChain
+
+linters:
+  enable:
+    - megacheck
+    - govet
+    - revive
+    - gocyclo
+    - gosec
+    - unconvert
+    - dupl
+    - nakedret
+    - prealloc
+    - exportloopref
+    - gocritic
+    - goimports
+    - whitespace
+    - misspell
+    - depguard
+    - importas
+    - contextcheck
+    - nolintlint
+    - revive
+
