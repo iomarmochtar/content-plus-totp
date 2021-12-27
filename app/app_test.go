@@ -72,7 +72,7 @@ func TestAppGetCombination(t *testing.T) {
 			},
 			getSimulationTime: func() time.Time {
 				// RFC1123     = "Mon, 02 Jan 2006 15:04:05 MST"
-				sTime, err := time.Parse(time.RFC1123, "Mon, 25 Dec 2021 00:00:00 WIB")
+				sTime, err := time.Parse(time.RFC1123Z, "Mon, 25 Dec 2021 00:00:00 +0700")
 				if err != nil {
 					panic(err)
 				}
