@@ -27,9 +27,7 @@ linters:
     - goimports
     - whitespace
     - misspell
-    - depguard
     - importas
     - contextcheck
     - nolintlint
     - revive
-
