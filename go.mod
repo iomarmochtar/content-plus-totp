@@ -1,6 +1,6 @@
 module github.com/iomarmochtar/content-plus-totp
 
-go 1.17
+go 1.22
 
 require (
 	github.com/atotto/clipboard v0.1.4
