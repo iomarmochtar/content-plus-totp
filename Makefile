@@ -11,6 +11,10 @@ lint:
 .PHONY: test-all
 test-all: test lint
 
-.PHONY: compile
-compile:
+.PHONY: compile-linux
+compile-linux:
 	GOARCH=amd64 CGO_ENABLED=0 GOOS=linux go build -o dist/${NAME} main.go
+
+# default compile target to linux
+.PHONY: compile
+compile: compile-linux

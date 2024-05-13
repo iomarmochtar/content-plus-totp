@@ -3,7 +3,6 @@ package config
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"os"
 )
 
@@ -20,7 +19,7 @@ func NewByPath(path string) (*Config, error) {
 		return nil, fmt.Errorf("%s is a directory", path)
 	}
 
-	jsonContent, err := ioutil.ReadFile(path)
+	jsonContent, err := os.ReadFile(path)
 	if err != nil {
 		return nil, err
 	}

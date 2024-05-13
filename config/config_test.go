@@ -2,7 +2,6 @@ package config_test
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"testing"
 
@@ -45,7 +44,7 @@ func TestReadConfig(t *testing.T) {
 
 func TestReadConfigByPath(t *testing.T) {
 	getTmpFile := func() string {
-		tempFile, err := ioutil.TempFile(os.TempDir(), "test_read_path")
+		tempFile, err := os.CreateTemp(os.TempDir(), "test_read_path")
 		if err != nil {
 			panic(err)
 		}
@@ -61,7 +60,7 @@ func TestReadConfigByPath(t *testing.T) {
 			preExec: func() string {
 				tmpFile := getTmpFile()
 				jsonContent := `{"content_enc": "aGVsbG8K", "totp_master_enc": "d29ybGQK"}`
-				if err := ioutil.WriteFile(tmpFile, []byte(jsonContent), 0600); err != nil {
+				if err := os.WriteFile(tmpFile, []byte(jsonContent), 0600); err != nil {
 					panic(err)
 				}
 

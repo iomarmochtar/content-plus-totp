@@ -19,7 +19,7 @@ func NewCmd() cli.App {
 	return cli.App{
 		Name:                 "content-plus-totp",
 		Usage:                "an easy way to combine static content such as password with totp token",
-		Version:              VERSION,
+		Version:              Version,
 		Compiled:             time.Now(),
 		EnableBashCompletion: true,
 		Flags: []cli.Flag{

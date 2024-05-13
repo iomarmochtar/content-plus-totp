@@ -1,3 +1,5 @@
 package app
 
-const VERSION = "0.1.0"
+var (
+	Version = "dev"
+)
