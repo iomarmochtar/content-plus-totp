@@ -13,7 +13,6 @@ linters-settings:
 
 linters:
   enable:
-    - megacheck
     - govet
     - revive
     - gocyclo
@@ -31,3 +30,4 @@ linters:
     - contextcheck
     - nolintlint
     - revive
+    - staticcheck
